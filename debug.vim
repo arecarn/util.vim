@@ -4,6 +4,11 @@
 "License: WTFPL
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"SCRIPT SETTINGS {{{
+let saveCpo = &cpo
+set cpo&vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
+
 "DEBUG {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! util#debug#PrintHeader(text) "{{{2
@@ -15,12 +20,14 @@ function! util#debug#PrintHeader(text) "{{{2
     endif
 endfunction "}}}2
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! util#debug#PrintMsg(text) "{{{2
     if g:util_debug
         echom a:text
     endif
 endfunction "}}}2
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! util#debug#PrintVarMsg(variable, text) "{{{2
     if g:util_debug
         echom '['.a:variable.'] = '.a:text
@@ -28,5 +35,5 @@ function! util#debug#PrintVarMsg(variable, text) "{{{2
 endfunction "}}}2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
-let &cpo = save_cpo
+let &cpo = saveCpo
 " vim:foldmethod=marker
