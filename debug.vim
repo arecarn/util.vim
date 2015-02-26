@@ -5,13 +5,14 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "SCRIPT SETTINGS {{{
-let saveCpo = &cpo
+let save_cpo = &cpo
 set cpo&vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
 "DEBUG {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! util#debug#PrintHeader(text) "{{{2
+function! util#debug#print_header(text) "{{{2
+
     if g:util_debug
         echom repeat(' ', 80)
         echom repeat('=', 80)
@@ -21,19 +22,21 @@ function! util#debug#PrintHeader(text) "{{{2
 endfunction "}}}2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! util#debug#PrintMsg(text) "{{{2
+function! util#debug#print_msg(text) "{{{2
+
     if g:util_debug
         echom a:text
     endif
 endfunction "}}}2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! util#debug#PrintVarMsg(variable, text) "{{{2
+function! util#debug#print_var_msg(variable, text) "{{{2
+
     if g:util_debug
         echom '['.a:variable.'] = '.a:text
     endif
 endfunction "}}}2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
-let &cpo = saveCpo
+let &cpo = save_cpo
 " vim:foldmethod=marker
