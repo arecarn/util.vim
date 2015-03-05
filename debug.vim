@@ -1,15 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Maintainer: Ryan Carney
-"Repository: https://github.com/arecarn/util.vim
-"License: WTFPL
+" Original Author: Ryan Carney
+" License: WTFPL
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"SCRIPT SETTINGS {{{
-let save_cpo = &cpo
+" BOILER PLATE {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let s:save_cpo = &cpo
 set cpo&vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
-"DEBUG {{{
+" DEBUG {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! util#debug#print_header(text) "{{{2
 
@@ -21,7 +21,7 @@ function! util#debug#print_header(text) "{{{2
     endif
 endfunction "}}}2
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! util#debug#print_msg(text) "{{{2
 
     if g:util_debug
@@ -29,7 +29,7 @@ function! util#debug#print_msg(text) "{{{2
     endif
 endfunction "}}}2
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! util#debug#print_var_msg(variable, text) "{{{2
 
     if g:util_debug
@@ -38,5 +38,9 @@ function! util#debug#print_var_msg(variable, text) "{{{2
 endfunction "}}}2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 
-let &cpo = save_cpo
+" BOILER PLATE {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let &cpo = s:save_cpo
+unlet s:save_cpo
 " vim:foldmethod=marker
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
